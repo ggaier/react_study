@@ -458,14 +458,13 @@ body, div, span {
     height: 100%;
 }
 
-
 body, html {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 /*body {*/
-    /*background-color: rgba(255,255,0,0.3);*/
+/*background-color: rgba(255,255,0,0.3);*/
 /*}*/
 
 body {
@@ -481,6 +480,7 @@ body {
 h1 {
     font-size: 64px;
     font-weight: 100;
+    position: relative;
 }
 
 h2 {
@@ -504,18 +504,14 @@ a:hover {
 }
 
 .section {
-    background-color: rgba(255, 0, 0, 0.3);
-    border: 2px solid #FFF;
+    /*background-color: rgba(255, 0, 0, 0.3);*/
+    /*border: 2px solid #FFF;*/
+    text-align: center;
+    overflow: hidden;
+    position: relative;
 }
 
-.red {
-    /* 指定该元素为 `flex-start`  */
-    -webkit-align-self: flex-start;
-        -ms-flex-item-align: start;
-            align-self: flex-start;
-}
-
-.vertical-container{
+.vertical-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -531,7 +527,7 @@ a:hover {
             justify-content: center;
 }
 
-.horizontal-container{
+.horizontal-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
@@ -545,14 +541,16 @@ a:hover {
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
+    height: 100%;
 }
 
-#navigation-horizontal{
+#navigation-horizontal {
     height: auto;
 }
 
 .iphone-demo {
     height: auto;
+    width: auto;
     -webkit-align-self: stretch;
         -ms-flex-item-align: stretch;
             align-self: stretch;
@@ -560,11 +558,10 @@ a:hover {
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
-    width: auto;
     -webkit-flex-basis: 0;
         -ms-flex-preferred-size: 0;
             flex-basis: 0;
-    background-color: rgba(255,0,0,0.3);
+    /*background-color: rgba(255, 0, 0, 0.3);*/
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -578,6 +575,7 @@ a:hover {
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
+    position: relative;
 }
 
 .feature-description {
@@ -593,7 +591,7 @@ a:hover {
     -webkit-flex-basis: 0;
         -ms-flex-preferred-size: 0;
             flex-basis: 0;
-    background-color: rgba(0,255,0,0.3);
+    /*background-color: rgba(0, 255, 0, 0.3);*/
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -609,3 +607,77 @@ a:hover {
             justify-content: center;
 
 }
+
+.center-div {
+    margin: auto;
+    width: 100%;
+}
+
+.child-img {
+    position: absolute;
+    top: 90px;
+    left: 25px;
+}
+
+.parent-img-container {
+    width: auto;
+    height: auto;
+}
+
+#android-robot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    -webkit-transform: translate(50%, 50%) rotate(-45deg);
+            transform: translate(50%, 50%) rotate(-45deg);
+}
+
+#center-text {
+    margin: auto;
+}
+
+#slider-control {
+    position: fixed;
+    padding: 3px;
+    left: 97%;
+    top: 50%;
+}
+
+#slider-control a {
+    padding: 3px;
+}
+
+#slider-control .dot {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+}
+
+#slider-control .active .dot {
+    background-color: #fff;
+}
+
+#intro-section {
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
+    position: static;
+}
+
+#float-title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+.overlay {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(31, 30, 52, 1));
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(31, 30, 52, 1));
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
