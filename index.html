@@ -15,18 +15,15 @@
 
     <link rel="stylesheet" type="text/css" href="./bundle/app.css">
 
-    <script type="text/javascript" src="./node_modules/gsap/src/uncompressed/TweenMax.js"></script>
-    <script src="./js/app.js"></script>
+
 </head>
 <body>
 
-<div class="section">
-    <div id="intro-section">
-    </div>
+<div id="intro-section" class="section">
     <div class="overlay"></div>
     <div class="vertical-container" id="float-title">
 
-        <img id="react_logo" class="react-logo" src="img/react-logo.svg" onload="animateLogo('react_logo')"/>
+        <img id="react_logo" class="react-logo" src="img/react-logo.svg"/>
 
         <h1>Build Native Apps With React</h1>
 
@@ -50,7 +47,7 @@
     </div>
 </div>
 
-<div class="section">
+<div id="native" class="section">
     <div class="horizontal-container">
         <div class="iphone-demo">
             <div class="parent-img-container">
@@ -69,7 +66,7 @@
         </div>
     </div>
 </div>
-<div class="section">
+<div id="touch" class="section">
     <div class="horizontal-container">
         <div class="iphone-demo">
             <div class="parent-img-container">
@@ -89,14 +86,18 @@
     </div>
 </div>
 
-<div class="section">
+<div id="android" class="section">
     <h1 id="center-text">Android Is Here</h1>
     <img id="android-robot" src="img/android-robot.svg"/>
 </div>
 
 <div id="slider-control">
 
-    <a href="#native" class="active">
+    <a href="#intro-section" class="active">
+        <div class="dot"></div>
+    </a>
+
+    <a href="#native">
         <div class="dot"></div>
     </a>
 
@@ -104,14 +105,15 @@
         <div class="dot"></div>
     </a>
 
-    <a href="#async">
-        <div class="dot"></div>
-    </a>
-
-    <a href="#flex">
+    <a href="#android">
         <div class="dot"></div>
     </a>
 </div>
+
+<script type="text/javascript" src="/node_modules/gsap/src/uncompressed/TweenMax.js"></script>
+<script type="text/javascript" src="node_modules/gsap/src/uncompressed/plugins/ScrollToPlugin.js"></script>
+<script src="/js/app.js"></script>
+<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
 
 </body>
 </html>

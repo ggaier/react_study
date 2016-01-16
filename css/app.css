@@ -144,6 +144,7 @@ a:hover {
 
 #slider-control {
     position: fixed;
+    z-index: 3;
     padding: 3px;
     left: 97%;
     top: 50%;
@@ -185,4 +186,11 @@ a:hover {
     top: 0;
     z-index: 1;
 }
+
+.react-logo {
+    position: relative;
+}
+
+
+
 
