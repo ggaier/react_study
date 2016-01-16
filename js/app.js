@@ -2,9 +2,10 @@ window.onload = function runAfterLoad() {
     animateLogo("#react_logo")
     animateRobot("#android-robot");
     updateSliderControl();
+    addSmoothScrolling();
 }
 
-window.onscroll=function(){
+window.onscroll = function () {
     updateSliderControl()
 }
 
@@ -45,24 +46,64 @@ function animateRobot(robotId) {
         .to(robotId, 0.5, {rotation: "-45deg"});
 }
 
-function updateSliderControl(){
-    var links=document.querySelectorAll("#slider-control a");
+/**
+ * 更新右边的indicator
+ */
+function updateSliderControl() {
+    var links = document.querySelectorAll("#slider-control a");
     console.log(links);
-    for(var i=0;i<links.length;i++){
-        var link=links[i];
+    for (var i = 0; i < links.length; i++) {
+        var link = links[i];
 
-        console.log("section="+section+",link="+link.toString());
-        var linkstr=link.toString();
-        var section=document.querySelector(linkstr.substr(linkstr.indexOf("#")));
-        var sectionTop=$(section).offset().top;
-        var sectionBottom=$(section).height()+sectionTop;
-        if(window.scrollY>=sectionTop&&window.scrollY<sectionBottom){
-            link.className="active";
-        }else{
-            link.className="";
+        console.log("section=" + section + ",link=" + link.toString());
+        var linkstr = link.toString();
+        var section = document.querySelector(linkstr.substr(linkstr.indexOf("#")));
+        var sectionTop = $(section).offset().top;
+        var sectionBottom = $(section).height() + sectionTop;
+        if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+            link.className = "active";
+        } else {
+            link.className = "";
         }
     }
 
 }
+
+/**
+ * 滚动到某一个元素
+ * @param element
+ */
+function scrollToElement(element) {
+    var topOfElement = $(element).offset().top;
+    TweenMax.to(window, 1, {
+        scrollTo: {
+            y: topOfElement,
+        },
+        ease: Power2.easeInOut
+    });
+
+}
+
+function addSmoothScrolling() {
+    var links = document.querySelectorAll("#slider-control a");
+    var link;
+    for(var i=0;i<links.length;i++){
+        link=links[i];
+        if (typeof window.addEventListener === 'function'){
+            (function(td){
+                td.addEventListener("click", function (event) {
+                    var linkstr = td.toString();
+                    var href = linkstr.substr(linkstr.indexOf("#"));
+                    scrollToElement(href);
+                });
+            })(link);
+        }
+    }
+
+}
+
+
+
+
 
 
