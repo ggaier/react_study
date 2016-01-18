@@ -55,7 +55,6 @@ function updateSliderControl() {
     for (var i = 0; i < links.length; i++) {
         var link = links[i];
 
-        console.log("section=" + section + ",link=" + link.toString());
         var linkstr = link.toString();
         var section = document.querySelector(linkstr.substr(linkstr.indexOf("#")));
         var sectionTop = $(section).offset().top;
@@ -84,6 +83,9 @@ function scrollToElement(element) {
 
 }
 
+/**
+ * 添加流畅的滚动动画
+ */
 function addSmoothScrolling() {
     var links = document.querySelectorAll("#slider-control a");
     var link;
@@ -101,6 +103,8 @@ function addSmoothScrolling() {
     }
 
 }
+
+
 
 
 
